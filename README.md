@@ -12,6 +12,9 @@ This project runs as two services: a FastAPI backend (Python) and a Vite + React
 - Node.js 18+
 - npm
 
+## API keys
+Add api keys in a .env file.  See backend/.env.example as a template
+
 ## Start the Project
 
 From the project root, open two terminals.
