@@ -1,0 +1,13 @@
+# file: requirements.txt  (full file with additions)
+fastapi
+uvicorn[standard]
+pydantic
+google-genai
+python-dotenv
+numpy
+pymupdf           # PDF parsing
+python-docx       # DOCX parsing
+fastembed         # offline embeddings (no API calls)
+# optional for the LangGraph demo (we'll add a tiny graph later)
+langgraph
+langchain-core
