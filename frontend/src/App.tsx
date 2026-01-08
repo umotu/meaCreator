@@ -31,9 +31,8 @@ interface ChatResponse {
   trace?: TraceEvent[];
 }
 
-
-const API_BASE_URL =
-  import.meta.env.VITE_API_BASE_URL || "http://localhost:8010";
+const API_BASE_URL = 
+  import.meta.env.VITE_API_BASE_URL; // no localhost fallback in production
 
 /* ---------- Markdown helpers for PDF ---------- */
 
@@ -142,6 +141,10 @@ function App() {
     setInput("");
     setIsSending(true);
     setError(null);
+
+    if (!API_BASE_URL) {
+      throw new Error("Backend is not configured. Set VITE_API_BASE_URL in Vercel.");
+    }    
 
     try {
       const response = await fetch(`${API_BASE_URL}/api/chat`, {
