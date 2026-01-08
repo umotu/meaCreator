@@ -340,6 +340,10 @@ def healthz() -> dict:
 def version() -> dict:
     return {"backend": "gemini+rag", "rev": "v1", "time": now_iso()}
 
+@app.get("/health")
+def health():
+    return {"ok": True}
+
 @app.post("/api/reload-index")
 def reload_index() -> dict:
     _load_index()
